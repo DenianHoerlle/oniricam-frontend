@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-primary: #222222;
+  --color-secondary: #ffffff;
+  --color-third: #1c5d99;
+  --color-fourth: #639fab;
+  --color-fifth: #bbcde5;
+}
+
+/* Utilities mapped to theme variables for component use */
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-third {
+  color: var(--color-third);
+}
+.text-fourth {
+  color: var(--color-fourth);
+}
+.text-fifth {
+  color: var(--color-fifth);
+}
+.text-muted {
+  color: var(--color-fourth);
+}
+
+.nav-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: var(--color-third);
+}
+
+/* hover background helpers using theme tones (subtle contrast) */
+.hover-bg-fifth:hover {
+  background-color: var(--color-fifth);
+}
+.hover-bg-fifth {
+  transition: background-color 150ms ease-in-out;
+}
+
+/* Accessible focus state for interactive elements */
+.focus-ring:focus {
+  outline: 2px solid var(--color-third);
+  outline-offset: 2px;
+}
