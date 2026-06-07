@@ -46,21 +46,7 @@ html {
 /* AI Stuff */
 
 /* Utilities mapped to theme variables for component use */
-.bg-secondary {
-  background-color: var(--color-secondary);
-}
-.text-primary {
-  color: var(--color-primary);
-}
-.text-third {
-  color: var(--color-third);
-}
-.text-fourth {
-  color: var(--color-fourth);
-}
-.text-fifth {
-  color: var(--color-fifth);
-}
+
 .text-muted {
   color: var(--color-fourth);
 }

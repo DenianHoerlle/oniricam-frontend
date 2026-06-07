@@ -33,7 +33,7 @@ const Header = () => {
         onClick={() => setOpen((v) => !v)}
         aria-controls="mobile-menu"
         aria-expanded={open}
-        className="p-2 rounded-md text-primary hover-bg-fifth focus-ring absolute right-6 top-3 z-50"
+        className="p-2 rounded-md hover-bg-fifth focus-ring absolute right-6 top-3 z-50"
       >
         {open ? (
           <svg
