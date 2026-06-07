@@ -1,3 +1,7 @@
+import {
+  BenefitsSection,
+  HeroSection,
+  InfoSection,
   ProductSection,
 } from "./components";
 
