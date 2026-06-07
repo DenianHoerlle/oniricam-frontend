@@ -137,12 +137,12 @@ const HeroSection = () => {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1
-              className={`text-5xl font-semibold text-balance text-secondary sm:text-7xl font-explora tracking-wide ${headlineStyle}`}
+              className={`text-5xl font-semibold whitespace-nowrap text-balance text-secondary sm:text-7xl font-fondamento tracking-wide ${headlineStyle}`}
             >
               {texts.heroHeading1}
             </h1>
             <h1
-              className={`text-5xl font-semibold text-balance text-secondary sm:text-7xl font-explora tracking-wide ${headlineStyle2}`}
+              className={`text-5xl font-semibold text-balance text-secondary sm:text-7xl font-fondamento tracking-wide ${headlineStyle2}`}
             >
               {texts.heroHeading2}
             </h1>
