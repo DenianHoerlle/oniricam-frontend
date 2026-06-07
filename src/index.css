@@ -10,7 +10,40 @@ html {
   --color-third: #1c5d99;
   --color-fourth: #639fab;
   --color-fifth: #bbcde5;
+
+  --font-explora: Explora, sans-serif;
+
+  --animate-appear: appear 800ms ease-in-out;
+  --animate-appear-delay: appear-delayed 1600ms ease-in-out;
 }
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes appear-delayed {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* AI Stuff */
 
 /* Utilities mapped to theme variables for component use */
 .bg-secondary {
