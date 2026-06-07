@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -19,8 +19,23 @@ const texts = {
   ctaButton: "Conhecer",
 };
 
+const HALF_SECOND_IN_MS = 500;
+
 const HeroSection = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    const animationDelay = setTimeout(
+      () => setShouldAnimate(true),
+      HALF_SECOND_IN_MS,
+    );
+
+    return () => clearTimeout(animationDelay);
+  }, []);
+
+  const headlineStyle = shouldAnimate ? "animate-appear" : "opacity-0";
+  const headlineStyle2 = shouldAnimate ? "animate-appear-delay" : "opacity-0";
 
   return (
     <div className="bg-gray-900">
@@ -123,10 +138,14 @@ const HeroSection = () => {
             {/* <h1 className="text-5xl font-semibold text-balance text-white sm:text-7xl font-explora tracking-wide">
               {texts.heroHeading}
             </h1> */}
-            <h1 className="text-5xl font-semibold text-balance text-white sm:text-7xl font-explora tracking-wide animate-appear ">
+            <h1
+              className={`text-5xl font-semibold text-balance text-white sm:text-7xl font-explora tracking-wide ${headlineStyle}`}
+            >
               Capture your dreams
             </h1>
-            <h1 className="text-5xl font-semibold text-balance text-white sm:text-7xl font-explora tracking-wide animate-appear-delay">
+            <h1
+              className={`text-5xl font-semibold text-balance text-white sm:text-7xl font-explora tracking-wide ${headlineStyle2}`}
+            >
               Like never before
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
