@@ -1,10 +1,13 @@
-import { HeroSection, InfoSection } from "./components";
+  ProductSection,
+} from "./components";
 
 const App = () => {
   return (
     <>
       <HeroSection />
       <InfoSection />
+      <ProductSection />
+      <BenefitsSection />
     </>
   );
 };
