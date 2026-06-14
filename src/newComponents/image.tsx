@@ -5,7 +5,7 @@ type ImageProps = {
 } & Partial<HTMLImageElement>;
 
 const Image = (props: ImageProps) => {
-  const imageClassNames = `w-xl h-auto rounded-lg ${props.className}`;
+  const imageClassNames = `w-full h-auto rounded-lg ${props.className}`;
 
   return <img src={props.src} alt={props.alt} className={imageClassNames} />;
 };

@@ -14,21 +14,26 @@ const texts = {
 const About = () => {
   return (
     <DelayAnimation delay={300}>
-      <div className="flex max-w-7xl mx-auto py-10 gap-10 mt-20">
-        <DelayAnimation delay={600}>
+      <div className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl mx-auto py-10 mt-20 px-4 sm:px-6">
+        <DelayAnimation
+          delay={600}
+          className="w-full lg:w-auto flex justify-center"
+        >
           <Image
             src={pessoaUsandoNotebook}
             alt="Pessoa com VR"
-            className="min-w-xl rounded-lg"
+            className="w-full max-w-xl rounded-lg"
           />
         </DelayAnimation>
-        <div className="flex flex-col gap-4">
-          <h2 className="text-5xl">{texts.heroHeading}</h2>
+        <div className="flex flex-col gap-4 max-w-2xl">
+          <h2 className="text-4xl sm:text-5xl font-semibold leading-tight">
+            {texts.heroHeading}
+          </h2>
           <DelayAnimation delay={600}>
-            <p className="text-md">{texts.heroParagraph}</p>
+            <p className="text-base leading-relaxed">{texts.heroParagraph}</p>
           </DelayAnimation>
           <DelayAnimation delay={900}>
-            <p className="text-md">{texts.heroParagraph2}</p>
+            <p className="text-base leading-relaxed">{texts.heroParagraph2}</p>
           </DelayAnimation>
         </div>
       </div>
