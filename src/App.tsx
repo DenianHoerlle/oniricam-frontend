@@ -1,6 +1,7 @@
 import {
   About,
   Benefits,
+  Footer,
   Form,
   Header,
   Hero,
@@ -20,6 +21,7 @@ const App = () => {
         <WhoIsFor />
         <Form />
       </div>
+      <Footer />
     </>
   );
 };
