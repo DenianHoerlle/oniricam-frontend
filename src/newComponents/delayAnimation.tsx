@@ -10,8 +10,6 @@ const DelayAnimation = (props: DelayAnimationProps): React.ReactNode => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  console.log("isVisible", isVisible);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
