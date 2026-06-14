@@ -1,5 +1,6 @@
 import { pessoaComVR } from "../assets";
 import { DelayAnimation } from "./delayAnimation";
+import { Image } from "./image";
 
 const texts = {
   heroHeading: "Capture your dreams like never before",
@@ -27,11 +28,7 @@ const Hero = () => {
           </DelayAnimation>
         </div>
         <DelayAnimation delay={1400}>
-          <img
-            src={pessoaComVR}
-            alt="Pessoa com VR"
-            className="w-full max-w-xl h-auto rounded-lg"
-          />
+          <Image src={pessoaComVR} alt="Pessoa com VR" className="h-96" />
         </DelayAnimation>
       </div>
     </DelayAnimation>
