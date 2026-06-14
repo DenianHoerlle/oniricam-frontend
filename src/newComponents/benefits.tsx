@@ -1,4 +1,5 @@
 import { BrainCircuit, Lightbulb, Mic, UserSearch } from "lucide-react"; // Example icons to match the design
+import { DelayAnimation } from "./delayAnimation";
 
 const Benefits = () => {
   const benefits = [
@@ -30,34 +31,38 @@ const Benefits = () => {
 
   return (
     <section className="bg-white py-24 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-950 mb-3">
-            Transform Your Relationship with Dreams
-          </h2>
-          <p className="text-lg text-gray-600 font-light">
-            Unlock the potential of your unconscious mind
-          </p>
-        </div>
+      <DelayAnimation delay={300}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-950 mb-3">
+              Transform Your Relationship with Dreams
+            </h2>
+            <p className="text-lg text-gray-600 font-light">
+              Unlock the potential of your unconscious mind
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col items-start gap-4">
-              <div className="bg-gray-100 p-2.5 rounded-lg border border-gray-200/60 shadow-inner">
-                {benefit.icon}
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-gray-950">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed max-w-lg font-normal text-[15px]">
-                  {benefit.description}
-                </p>
-              </div>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            {benefits.map((benefit, index) => (
+              <DelayAnimation delay={600 + (index + 1) * 300}>
+                <div key={index} className="flex flex-col items-start gap-4">
+                  <div className="bg-gray-100 p-2.5 rounded-lg border border-gray-200/60 shadow-inner">
+                    {benefit.icon}
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold text-gray-950">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed max-w-lg font-normal text-[15px]">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </DelayAnimation>
+            ))}
+          </div>
         </div>
-      </div>
+      </DelayAnimation>
     </section>
   );
 };
