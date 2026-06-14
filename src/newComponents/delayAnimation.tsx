@@ -18,7 +18,7 @@ const DelayAnimation = (props: DelayAnimationProps): React.ReactNode => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.1 },
     );
 
     const currentElement = ref.current;
