@@ -75,7 +75,7 @@ const BenefitCard = ({
     <div
       className={`flex flex-col justify-center transition-opacity duration-700 ${
         isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      } ${imagePosition === "left" ? "text-right" : "text-left"} `}
     >
       <h3 className="text-2xl font-bold text-secondary mb-3">{title}</h3>
       <p className="text-lg text-fifth">{text}</p>
