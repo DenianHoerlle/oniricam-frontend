@@ -14,7 +14,7 @@ const Hero = () => {
     <DelayAnimation delay={500}>
       <div
         id="home"
-        className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl mx-auto py-10 px-4 sm:px-6"
+        className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl mx-auto py-20 px-4 sm:px-6"
       >
         <div className="flex flex-col gap-4 animate-appear max-w-2xl">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold leading-tight">
