@@ -1,4 +1,12 @@
-import { About, Benefits, Header, Hero, HowItWorks } from "./newComponents";
+import {
+  About,
+  Benefits,
+  Form,
+  Header,
+  Hero,
+  HowItWorks,
+  WhoIsFor,
+} from "./newComponents";
 
 const App = () => {
   return (
@@ -9,6 +17,8 @@ const App = () => {
         <About />
         <HowItWorks />
         <Benefits />
+        <WhoIsFor />
+        <Form />
       </div>
     </>
   );

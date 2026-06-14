@@ -34,7 +34,7 @@ const Benefits = () => {
       <DelayAnimation delay={300}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-950 mb-3">
+            <h2 className="text-5xl md:text-5xl font-semibold tracking-tight text-gray-950 mb-3">
               Transform Your Relationship with Dreams
             </h2>
             <p className="text-lg text-gray-600 font-light">

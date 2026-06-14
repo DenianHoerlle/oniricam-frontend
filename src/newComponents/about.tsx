@@ -23,7 +23,7 @@ const About = () => {
           />
         </DelayAnimation>
         <div className="flex flex-col gap-4">
-          <h1 className="text-5xl">{texts.heroHeading}</h1>
+          <h2 className="text-5xl">{texts.heroHeading}</h2>
           <DelayAnimation delay={600}>
             <p className="text-md">{texts.heroParagraph}</p>
           </DelayAnimation>
