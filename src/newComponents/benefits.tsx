@@ -1,34 +1,38 @@
-import { BrainCircuit, Lightbulb, Mic, UserSearch } from "lucide-react"; // Example icons to match the design
+import { BrainCircuit, Lightbulb, Mic, UserSearch } from "lucide-react";
 import { DelayAnimation } from "./delayAnimation";
 
 const isMobile = window.innerWidth <= 640;
 
-const benefits = [
-  {
-    icon: <UserSearch size={22} className="text-gray-700" />,
-    title: "Self-Knowledge",
-    description:
-      "Gain unprecedented insight into your inner world. Discover recurring patterns, symbols, and themes that reveal your deepest thoughts and emotions.",
-  },
-  {
-    icon: <Lightbulb size={22} className="text-gray-700" />,
-    title: "Creativity",
-    description:
-      "Artists, writers, and creators can capture fleeting dream inspiration that might otherwise be lost. Your subconscious becomes your creative collaborator.",
-  },
-  {
-    icon: <BrainCircuit size={22} className="text-gray-700" />,
-    title: "Memory Analysis",
-    description:
-      "Build a personal dream archive over time. Track how your dreams evolve through different life stages and circumstances.",
-  },
-  {
-    icon: <Mic size={22} className="text-gray-700" />,
-    title: "Research & Therapy Support",
-    description:
-      "Therapists and researchers can use dream recordings to better understand mental health patterns, trauma processing, and cognitive function.",
-  },
-];
+const texts = {
+  sectionHeading: "Transform Your Relationship with Dreams",
+  sectionDescription: "Unlock the potential of your unconscious mind",
+  benefits: [
+    {
+      icon: <UserSearch size={22} className="text-gray-700" />,
+      title: "Self-Knowledge",
+      description:
+        "Gain unprecedented insight into your inner world. Discover recurring patterns, symbols, and themes that reveal your deepest thoughts and emotions.",
+    },
+    {
+      icon: <Lightbulb size={22} className="text-gray-700" />,
+      title: "Creativity",
+      description:
+        "Artists, writers, and creators can capture fleeting dream inspiration that might otherwise be lost. Your subconscious becomes your creative collaborator.",
+    },
+    {
+      icon: <BrainCircuit size={22} className="text-gray-700" />,
+      title: "Memory Analysis",
+      description:
+        "Build a personal dream archive over time. Track how your dreams evolve through different life stages and circumstances.",
+    },
+    {
+      icon: <Mic size={22} className="text-gray-700" />,
+      title: "Research & Therapy Support",
+      description:
+        "Therapists and researchers can use dream recordings to better understand mental health patterns, trauma processing, and cognitive function.",
+    },
+  ],
+};
 
 const Benefits = () => {
   return (
@@ -37,15 +41,15 @@ const Benefits = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <h2 className="text-5xl md:text-5xl font-semibold tracking-tight text-gray-950 mb-3">
-              Transform Your Relationship with Dreams
+              {texts.sectionHeading}
             </h2>
             <p className="text-lg text-gray-600 font-light">
-              Unlock the potential of your unconscious mind
+              {texts.sectionDescription}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-            {benefits.map((benefit, index) => (
+            {texts.benefits.map((benefit, index) => (
               <DelayAnimation
                 delay={isMobile ? 300 : 600 + (index + 1) * 300}
                 key={benefit.title}

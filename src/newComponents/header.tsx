@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-const items = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "How it works", href: "#howitworks" },
-  { name: "benefits", href: "#benefits" },
-  { name: "Who is for", href: "#whoisfor" },
-  { name: "Contact", href: "#contact" },
-];
+const texts = {
+  brandName: "OniriCam",
+  items: [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "How it works", href: "#howitworks" },
+    { name: "benefits", href: "#benefits" },
+    { name: "Who is for", href: "#whoisfor" },
+    { name: "Contact", href: "#contact" },
+  ],
+};
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -15,7 +18,7 @@ const Header = () => {
   const renderDesktopHeader = () => {
     return (
       <nav className="hidden md:flex md:items-center md:space-x-6">
-        {items.map((item) => (
+        {texts.items.map((item) => (
           <a
             key={item.href}
             href={item.href}
@@ -85,7 +88,7 @@ const Header = () => {
           }`}
         >
           <div className="flex h-full flex-col justify-center items-center px-6 space-y-6">
-            {items.map((item) => (
+            {texts.items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -107,7 +110,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <a href="#home" className="text-xl font-semibold text-primary">
-              OniriCam
+              {texts.brandName}
             </a>
           </div>
           {renderDesktopHeader()}

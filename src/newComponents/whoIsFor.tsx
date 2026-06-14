@@ -3,26 +3,31 @@ import { DelayAnimation } from "./delayAnimation";
 
 const isMobile = window.innerWidth <= 640;
 
-const targets = [
-  {
-    title: "Dream Enthusiasts",
-    description:
-      "Anyone curious about their inner world and eager to explore the mysteries of sleep.",
-    icon: <Moon size={32} strokeWidth={1.2} className="text-gray-700" />,
-  },
-  {
-    title: "Creative Professionals",
-    description:
-      "Artists, writers, and designers seeking new sources of inspiration and creative material.",
-    icon: <Palette size={32} strokeWidth={1.2} className="text-gray-700" />,
-  },
-  {
-    title: "Mental Health Practitioners",
-    description:
-      "Therapists and researchers looking for innovative tools to understand the human psyche.",
-    icon: <ShieldAlert size={32} strokeWidth={1.2} className="text-gray-700" />,
-  },
-];
+const texts = {
+  sectionTitle: "Who is OniriCam For?",
+  targets: [
+    {
+      title: "Dream Enthusiasts",
+      description:
+        "Anyone curious about their inner world and eager to explore the mysteries of sleep.",
+      icon: <Moon size={32} strokeWidth={1.2} className="text-gray-700" />,
+    },
+    {
+      title: "Creative Professionals",
+      description:
+        "Artists, writers, and designers seeking new sources of inspiration and creative material.",
+      icon: <Palette size={32} strokeWidth={1.2} className="text-gray-700" />,
+    },
+    {
+      title: "Mental Health Practitioners",
+      description:
+        "Therapists and researchers looking for innovative tools to understand the human psyche.",
+      icon: (
+        <ShieldAlert size={32} strokeWidth={1.2} className="text-gray-700" />
+      ),
+    },
+  ],
+};
 
 const WhoIsFor = () => {
   return (
@@ -34,11 +39,11 @@ const WhoIsFor = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-normal tracking-tight text-gray-900 sm:text-5xl">
-              Who is OniriCam For?
+              {texts.sectionTitle}
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-y-16 md:grid-cols-3 md:gap-x-12 lg:gap-x-16 text-center">
-            {targets.map((target, index) => (
+            {texts.targets.map((target, index) => (
               <DelayAnimation
                 delay={isMobile ? 300 : 300 * (index + 1) + 600}
                 key={target.title}
