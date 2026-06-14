@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="px-10">
+      <div className="px-10 pt-16">
         <Hero />
         <About />
         <HowItWorks />

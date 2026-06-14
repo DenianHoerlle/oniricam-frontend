@@ -3,32 +3,33 @@ import { DelayAnimation } from "./delayAnimation";
 
 const isMobile = window.innerWidth <= 640;
 
-const WhoIsFor = () => {
-  const targets = [
-    {
-      title: "Dream Enthusiasts",
-      description:
-        "Anyone curious about their inner world and eager to explore the mysteries of sleep.",
-      icon: <Moon size={32} strokeWidth={1.2} className="text-gray-700" />,
-    },
-    {
-      title: "Creative Professionals",
-      description:
-        "Artists, writers, and designers seeking new sources of inspiration and creative material.",
-      icon: <Palette size={32} strokeWidth={1.2} className="text-gray-700" />,
-    },
-    {
-      title: "Mental Health Practitioners",
-      description:
-        "Therapists and researchers looking for innovative tools to understand the human psyche.",
-      icon: (
-        <ShieldAlert size={32} strokeWidth={1.2} className="text-gray-700" />
-      ),
-    },
-  ];
+const targets = [
+  {
+    title: "Dream Enthusiasts",
+    description:
+      "Anyone curious about their inner world and eager to explore the mysteries of sleep.",
+    icon: <Moon size={32} strokeWidth={1.2} className="text-gray-700" />,
+  },
+  {
+    title: "Creative Professionals",
+    description:
+      "Artists, writers, and designers seeking new sources of inspiration and creative material.",
+    icon: <Palette size={32} strokeWidth={1.2} className="text-gray-700" />,
+  },
+  {
+    title: "Mental Health Practitioners",
+    description:
+      "Therapists and researchers looking for innovative tools to understand the human psyche.",
+    icon: <ShieldAlert size={32} strokeWidth={1.2} className="text-gray-700" />,
+  },
+];
 
+const WhoIsFor = () => {
   return (
-    <section className="bg-white text-gray-900 py-24 px-6 font-sans">
+    <section
+      id="whoisfor"
+      className="bg-white text-gray-900 py-24 px-6 font-sans"
+    >
       <DelayAnimation delay={300}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">

@@ -57,7 +57,10 @@ const Form = () => {
     : "border border-red-500 outline-red-500";
 
   return (
-    <section className="bg-white text-gray-900 py-24 px-6 font-sans">
+    <section
+      id="contact"
+      className="bg-white text-gray-900 py-24 px-6 font-sans"
+    >
       <DelayAnimation delay={300}>
         <div className="max-w-xl mx-auto flex flex-col items-center">
           <div className="text-center mb-10">

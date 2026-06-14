@@ -37,7 +37,7 @@ const DelayAnimation = (props: DelayAnimationProps): React.ReactNode => {
 
   const [shouldShow, setShouldShow] = useState(false);
 
-  const { children, className, delay } = props;
+  const { children, className = "", delay } = props;
 
   useEffect(() => {
     if (!isVisible) return;
@@ -48,7 +48,7 @@ const DelayAnimation = (props: DelayAnimationProps): React.ReactNode => {
   }, [delay, isVisible]);
 
   const wrapperClassNames = shouldShow
-    ? `w-full ${className} animate-appear`
+    ? `w-full animate-appear ${className}`.trim()
     : "w-full opacity-0";
 
   return (

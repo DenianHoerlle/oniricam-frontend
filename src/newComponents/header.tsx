@@ -2,10 +2,11 @@ import { useState } from "react";
 
 const items = [
   { name: "Home", href: "#home" },
-  { name: "Sobre", href: "#sobre" },
-  { name: "Como funciona", href: "#como-funciona" },
-  { name: "Benefícios", href: "#beneficios" },
-  { name: "Contato", href: "#inscricao" },
+  { name: "About", href: "#about" },
+  { name: "How it works", href: "#howitworks" },
+  { name: "benefits", href: "#benefits" },
+  { name: "Who is for", href: "#whoisfor" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const Header = () => {
@@ -101,7 +102,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary shadow-sm sticky top-0 z-50">
+    <header className="bg-secondary shadow-sm fixed top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">

@@ -14,7 +14,10 @@ const texts = {
 const About = () => {
   return (
     <DelayAnimation delay={300}>
-      <div className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl mx-auto py-10 mt-20 px-4 sm:px-6">
+      <div
+        id="about"
+        className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl mx-auto py-20 mt-20 px-4 sm:px-6"
+      >
         <DelayAnimation
           delay={600}
           className="w-full lg:w-auto flex justify-center"

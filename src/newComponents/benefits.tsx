@@ -3,36 +3,36 @@ import { DelayAnimation } from "./delayAnimation";
 
 const isMobile = window.innerWidth <= 640;
 
-const Benefits = () => {
-  const benefits = [
-    {
-      icon: <UserSearch size={22} className="text-gray-700" />,
-      title: "Self-Knowledge",
-      description:
-        "Gain unprecedented insight into your inner world. Discover recurring patterns, symbols, and themes that reveal your deepest thoughts and emotions.",
-    },
-    {
-      icon: <Lightbulb size={22} className="text-gray-700" />,
-      title: "Creativity",
-      description:
-        "Artists, writers, and creators can capture fleeting dream inspiration that might otherwise be lost. Your subconscious becomes your creative collaborator.",
-    },
-    {
-      icon: <BrainCircuit size={22} className="text-gray-700" />,
-      title: "Memory Analysis",
-      description:
-        "Build a personal dream archive over time. Track how your dreams evolve through different life stages and circumstances.",
-    },
-    {
-      icon: <Mic size={22} className="text-gray-700" />,
-      title: "Research & Therapy Support",
-      description:
-        "Therapists and researchers can use dream recordings to better understand mental health patterns, trauma processing, and cognitive function.",
-    },
-  ];
+const benefits = [
+  {
+    icon: <UserSearch size={22} className="text-gray-700" />,
+    title: "Self-Knowledge",
+    description:
+      "Gain unprecedented insight into your inner world. Discover recurring patterns, symbols, and themes that reveal your deepest thoughts and emotions.",
+  },
+  {
+    icon: <Lightbulb size={22} className="text-gray-700" />,
+    title: "Creativity",
+    description:
+      "Artists, writers, and creators can capture fleeting dream inspiration that might otherwise be lost. Your subconscious becomes your creative collaborator.",
+  },
+  {
+    icon: <BrainCircuit size={22} className="text-gray-700" />,
+    title: "Memory Analysis",
+    description:
+      "Build a personal dream archive over time. Track how your dreams evolve through different life stages and circumstances.",
+  },
+  {
+    icon: <Mic size={22} className="text-gray-700" />,
+    title: "Research & Therapy Support",
+    description:
+      "Therapists and researchers can use dream recordings to better understand mental health patterns, trauma processing, and cognitive function.",
+  },
+];
 
+const Benefits = () => {
   return (
-    <section className="bg-white py-24 px-6 md:px-12">
+    <section id="benefits" className="bg-white py-24 px-6 md:px-12">
       <DelayAnimation delay={300}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 max-w-2xl mx-auto">

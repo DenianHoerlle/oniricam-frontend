@@ -2,37 +2,35 @@ import { Brain, Cpu, Eye, Sparkles } from "lucide-react";
 import { DelayAnimation } from "./delayAnimation";
 
 const isMobile = window.innerWidth <= 640;
-
+const steps = [
+  {
+    icon: <Brain size={24} strokeWidth={1.5} />,
+    title: "Capture",
+    description:
+      "Wear the OniriCam headset while you sleep. Non-invasive sensors monitor your neural activity throughout the night, focusing on REM stages where vivid dreams occur.",
+  },
+  {
+    icon: <Cpu size={24} strokeWidth={1.5} />,
+    title: "Interpretation",
+    description:
+      "Our proprietary AI analyzes your brainwave patterns, identifying visual, emotional, and narrative elements within your dream sequences.",
+  },
+  {
+    icon: <Sparkles size={24} strokeWidth={1.5} />,
+    title: "Transformation",
+    description:
+      "Neural data is transformed into audiovisual content using advanced generative algorithms, recreating the essence of your dream experience.",
+  },
+  {
+    icon: <Eye size={24} strokeWidth={1.5} />,
+    title: "Visualization",
+    description:
+      "Wake up to find your dreams waiting in the OniriCam app ready to watch, share, or analyze. Each recording is a unique window into your subconscious.",
+  },
+];
 const HowItWorks = () => {
-  const steps = [
-    {
-      icon: <Brain size={24} strokeWidth={1.5} />,
-      title: "Capture",
-      description:
-        "Wear the OniriCam headset while you sleep. Non-invasive sensors monitor your neural activity throughout the night, focusing on REM stages where vivid dreams occur.",
-    },
-    {
-      icon: <Cpu size={24} strokeWidth={1.5} />,
-      title: "Interpretation",
-      description:
-        "Our proprietary AI analyzes your brainwave patterns, identifying visual, emotional, and narrative elements within your dream sequences.",
-    },
-    {
-      icon: <Sparkles size={24} strokeWidth={1.5} />,
-      title: "Transformation",
-      description:
-        "Neural data is transformed into audiovisual content using advanced generative algorithms, recreating the essence of your dream experience.",
-    },
-    {
-      icon: <Eye size={24} strokeWidth={1.5} />,
-      title: "Visualization",
-      description:
-        "Wake up to find your dreams waiting in the OniriCam app ready to watch, share, or analyze. Each recording is a unique window into your subconscious.",
-    },
-  ];
-
   return (
-    <section className="py-20 px-6 font-sans">
+    <section id="howitworks" className="py-20 px-6 font-sans">
       <DelayAnimation delay={300}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
