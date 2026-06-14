@@ -4,6 +4,7 @@ type DelayAnimationProps = {
   children: React.ReactNode;
   delay: number;
   className?: string;
+  key?: number | string;
 };
 
 const DelayAnimation = (props: DelayAnimationProps): React.ReactNode => {

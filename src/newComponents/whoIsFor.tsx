@@ -1,6 +1,8 @@
 import { Moon, Palette, ShieldAlert } from "lucide-react";
 import { DelayAnimation } from "./delayAnimation";
 
+const isMobile = window.innerWidth <= 640;
+
 const WhoIsFor = () => {
   const targets = [
     {
@@ -36,7 +38,10 @@ const WhoIsFor = () => {
           </div>
           <div className="grid grid-cols-1 gap-y-16 md:grid-cols-3 md:gap-x-12 lg:gap-x-16 text-center">
             {targets.map((target, index) => (
-              <DelayAnimation delay={300 * (index + 1) + 600}>
+              <DelayAnimation
+                delay={isMobile ? 300 : 300 * (index + 1) + 600}
+                key={target.title}
+              >
                 <div key={index} className="flex flex-col items-center">
                   <div className="mb-6 flex items-center justify-center h-20 w-20 rounded-full bg-gray-50 border border-gray-100">
                     {target.icon}

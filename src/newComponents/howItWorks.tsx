@@ -1,6 +1,8 @@
 import { Brain, Cpu, Eye, Sparkles } from "lucide-react";
 import { DelayAnimation } from "./delayAnimation";
 
+const isMobile = window.innerWidth <= 640;
+
 const HowItWorks = () => {
   const steps = [
     {
@@ -44,7 +46,10 @@ const HowItWorks = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
             {steps.map((step, index) => (
-              <DelayAnimation delay={(index + 1) * 300 + 300}>
+              <DelayAnimation
+                delay={isMobile ? 300 : (index + 1) * 300 + 300}
+                key={step.title}
+              >
                 <div key={index} className="flex flex-col items-start">
                   <div className="flex items-center justify-center w-11 h-11 rounded-lg text-gray-700 mb-5">
                     {step.icon}

@@ -1,6 +1,8 @@
 import { BrainCircuit, Lightbulb, Mic, UserSearch } from "lucide-react"; // Example icons to match the design
 import { DelayAnimation } from "./delayAnimation";
 
+const isMobile = window.innerWidth <= 640;
+
 const Benefits = () => {
   const benefits = [
     {
@@ -44,7 +46,10 @@ const Benefits = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             {benefits.map((benefit, index) => (
-              <DelayAnimation delay={600 + (index + 1) * 300}>
+              <DelayAnimation
+                delay={isMobile ? 300 : 600 + (index + 1) * 300}
+                key={benefit.title}
+              >
                 <div key={index} className="flex flex-col items-start gap-4">
                   <div className="bg-gray-100 p-2.5 rounded-lg border border-gray-200/60 shadow-inner">
                     {benefit.icon}
