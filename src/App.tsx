@@ -1,17 +1,14 @@
-import {
-  BenefitsSection,
-  HeroSection,
-  InfoSection,
-  ProductSection,
-} from "./components";
+import { About, Header, Hero, HowItWorks } from "./newComponents";
 
 const App = () => {
   return (
     <>
-      <HeroSection />
-      <InfoSection />
-      <ProductSection />
-      <BenefitsSection />
+      <Header />
+      <div className="px-10">
+        <Hero />
+        <About />
+        <HowItWorks />
+      </div>
     </>
   );
 };
