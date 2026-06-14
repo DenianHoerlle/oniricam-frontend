@@ -34,7 +34,7 @@ const HowItWorks = () => {
       <DelayAnimation delay={300}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-semibold text-[#111111] mb-3 tracking-tight">
+            <h2 className="text-5xl font-semibold text-[#111111] mb-3 tracking-tight">
               How it Works
             </h2>
             <p className="text-base text-gray-500">
