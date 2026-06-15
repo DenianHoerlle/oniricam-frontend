@@ -1,5 +1,6 @@
+import { Mail } from "lucide-react";
 import type { ChangeEvent, FocusEvent, SubmitEvent } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { DelayAnimation } from "./delayAnimation";
 
 const validateEmail = (email: string) => {
@@ -25,7 +26,9 @@ const texts = {
 };
 
 const Form = () => {
+  const responseHandlingRef = useRef<number | false>(false);
   const [isEmailValid, setIsEmailValid] = useState(true);
+  const [showSucess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -56,14 +59,37 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!isFormValid) {
       return;
     }
 
-    // TODO: MAKE REQUEST
+    const body = {
+      email: formData.email,
+      firstname: formData.firstName,
+      lastname: formData.lastName,
+    };
+
+    const response = await fetch("http://localhost:8080/oniricam/subscribers", {
+      method: "POST",
+      headers: {
+        accept: "*/*",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (await response.json()) {
+      setShowSuccess(true);
+      responseHandlingRef.current = setTimeout(() => {
+        setShowSuccess(false);
+      }, 2000);
+    } else {
+      console.log("error", response);
+    }
   };
 
   const disabledClassNames =
@@ -72,6 +98,34 @@ const Form = () => {
   const errorClassNames = isEmailValid
     ? ""
     : "border border-red-500 outline-red-500";
+
+  const renderSuccess = () => {
+    if (showSucess)
+      return (
+        <div className="flex flex-col gap-3 w-full max-w-xl mx-auto p-4 font-sans">
+          {/* Success Alert Banner */}
+          <div className="flex items-center justify-center gap-2 bg-[#76b787] text-white py-3 px-4 rounded-md font-medium text-sm shadow-sm">
+            <Mail size={16} />
+            <span>Subscription successful!</span>
+          </div>
+
+          {/* Thank You Subtext Box */}
+          <div className="bg-[#f4f7f5] text-gray-600 text-center py-4 px-4 rounded-md text-sm border border-gray-100 leading-relaxed">
+            Thank you for joining! We'll keep you updated on OniriCam's launch.
+          </div>
+        </div>
+      );
+
+    return (
+      <button
+        type="submit"
+        disabled={!isEmailValid || !isFormValid}
+        className={`w-full bg-black text-white text-sm font-medium py-3.5 rounded-md hover:bg-gray-900 active:bg-gray-950 transition-colors mt-2 shadow-sm ${disabledClassNames}`}
+      >
+        {texts.submitButton}
+      </button>
+    );
+  };
 
   return (
     <section
@@ -145,13 +199,7 @@ const Form = () => {
                 className={`w-full px-4 py-3 rounded-md bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400 focus:bg-white transition-colors ${errorClassNames}`}
               />
             </div>
-            <button
-              type="submit"
-              disabled={!isEmailValid || !isFormValid}
-              className={`w-full bg-black text-white text-sm font-medium py-3.5 rounded-md hover:bg-gray-900 active:bg-gray-950 transition-colors mt-2 shadow-sm ${disabledClassNames}`}
-            >
-              {texts.submitButton}
-            </button>
+            {renderSuccess()}
           </form>
         </div>
       </DelayAnimation>
