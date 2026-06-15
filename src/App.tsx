@@ -1,5 +1,29 @@
+import {
+  About,
+  Benefits,
+  Footer,
+  Form,
+  Header,
+  Hero,
+  HowItWorks,
+  WhoIsFor,
+} from "./newComponents";
+
 const App = () => {
-  return <div className="m-2">Hello world</div>;
+  return (
+    <>
+      <Header />
+      <div className="px-10 pt-16">
+        <Hero />
+        <About />
+        <HowItWorks />
+        <Benefits />
+        <WhoIsFor />
+        <Form />
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default App;

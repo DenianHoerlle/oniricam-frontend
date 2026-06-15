@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  overflow: hidden;
+}
+
+@theme {
+  --color-primary: #222222;
+  --color-secondary: #ffffff;
+  --color-third: #1c5d99;
+  --color-fourth: #639fab;
+  --color-fifth: #bbcde5;
+
+  --font-fondamento: Fondamento, sans-serif;
+  --font-lexend: Lexend, sans-serif;
+  --font-sans:
+    Lexend, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --animate-appear: appear 800ms ease-in-out;
+  --animate-appear-delay: appear-delayed 1600ms ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes appear-delayed {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* AI Stuff */
+
+/* Utilities mapped to theme variables for component use */
+
+.text-muted {
+  color: var(--color-fourth);
+}
+
+.nav-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: var(--color-third);
+}
+
+/* hover background helpers using theme tones (subtle contrast) */
+.hover-bg-fifth:hover {
+  background-color: var(--color-fifth);
+}
+.hover-bg-fifth {
+  transition: background-color 150ms ease-in-out;
+}
+
+/* Accessible focus state for interactive elements */
+.focus-ring:focus {
+  outline: 2px solid var(--color-third);
+  outline-offset: 2px;
+}
