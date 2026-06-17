@@ -80,3 +80,12 @@ html {
   outline: 2px solid var(--color-third);
   outline-offset: 2px;
 }
+
+/* Utility to hide native scrollbars while preserving scroll behavior */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

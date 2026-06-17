@@ -6,6 +6,7 @@ import {
   Header,
   Hero,
   HowItWorks,
+  Publications,
   WhoIsFor,
 } from "./newComponents";
 
@@ -19,6 +20,7 @@ const App = () => {
         <HowItWorks />
         <Benefits />
         <WhoIsFor />
+        <Publications />
         <Form />
       </div>
       <Footer />
