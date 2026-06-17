@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { DelayAnimation } from "./delayAnimation";
 
 type Publication = {
   bannerUrl: string;
@@ -37,49 +38,48 @@ const Publications = () => {
     });
   };
 
-  const openPublication = (url: string) => {
-    window.open(url, "_blank")?.focus();
-  };
-
   if (publications.length === 0) return null;
 
   return (
     <div className="relative w-full">
-      <button
-        aria-label="Previous"
-        onClick={() => scroll("left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-white rounded-full shadow"
-      >
-        <span className="text-2xl">‹</span>
-      </button>
+      <DelayAnimation delay={300}>
+        <button
+          aria-label="Previous"
+          onClick={() => scroll("left")}
+          className="absolute left-1 top-1/2 -translate-y-1/2 z-20 p-2 bg-white rounded-full shadow"
+        >
+          <span className="text-2xl">‹</span>
+        </button>
 
-      <div
-        ref={containerRef}
-        className="flex gap-3 overflow-x-auto scroll-smooth py-2 px-12 hide-scrollbar"
-      >
-        {publications.map((p, idx) => (
-          <div
-            key={idx}
-            onClick={() => openPublication(p.contentUrl)}
-            className="min-w-55 cursor-pointer rounded-lg overflow-hidden shadow bg-white"
-          >
-            <img
-              src={p.bannerUrl}
-              alt={p.title}
-              className="w-full h-30 object-cover"
-            />
-            <div className="p-2 text-sm">{p.title}</div>
-          </div>
-        ))}
-      </div>
+        <div
+          ref={containerRef}
+          className="flex gap-3 overflow-x-auto scroll-smooth py-2 px-12 hide-scrollbar justify-evenly"
+        >
+          {publications.map((p, index) => (
+            <a
+              key={index}
+              href={`https://${p.contentUrl}`}
+              target="_blank"
+              className="min-w-55 cursor-pointer rounded-lg overflow-hidden shadow bg-white"
+            >
+              <img
+                src={p.bannerUrl}
+                alt={p.title}
+                className="w-full h-30 object-cover"
+              />
+              <div className="p-2 text-sm">{p.title}</div>
+            </a>
+          ))}
+        </div>
 
-      <button
-        aria-label="Next"
-        onClick={() => scroll("right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 bg-white rounded-full shadow"
-      >
-        <span className="text-2xl">›</span>
-      </button>
+        <button
+          aria-label="Next"
+          onClick={() => scroll("right")}
+          className="absolute right-1 top-1/2 -translate-y-1/2 z-20 p-3 bg-white rounded-full shadow"
+        >
+          <span className="text-2xl">›</span>
+        </button>
+      </DelayAnimation>
     </div>
   );
 };
